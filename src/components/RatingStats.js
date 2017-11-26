@@ -83,11 +83,7 @@ export class RatingStat extends React.Component {
   }
 
   componentDidMount(){
-    // fetch data here and set state
     this.setState({
-      // ratings: [20, 25, 12, 7, 3],
-      // ratingAverage: 3.8,
-      // raterCount: 67
       ratings: this.props.ratings,
       ratingAverage: this.props.ratingAverage,
       raterCount: this.props.raterCount
