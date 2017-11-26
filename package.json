@@ -1,0 +1,26 @@
+{
+  "name": "react-star-rating-chart",
+  "version": "0.9.1",
+  "description": "React Star Rating Chart inspired by the Google Play Store chart.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gitmathub/react-star-rating-chart.git"
+  },
+  "keywords": [
+    "rating",
+    "star",
+    "chart",
+    "bar",
+    "react"
+  ],
+  "author": "mat",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gitmathub/react-star-rating-chart/issues"
+  },
+  "homepage": "https://github.com/gitmathub/react-star-rating-chart#readme"
+}
