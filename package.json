@@ -2,8 +2,32 @@
   "name": "react-star-rating-chart",
   "version": "0.9.1",
   "description": "React Star Rating Chart inspired by the Google Play Store chart.",
+  "dependencies": {
+    "express": "^4.16.2",
+    "lodash": "^4.17.4",
+    "material-ui": "next",
+    "material-ui-icons": "^1.0.0-beta.17",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "webpack": "^3.8.1",
+    "webpack-dev-middleware": "^1.12.1"
+  },
+  "babel": {
+    "presets": [
+      "react",
+      "env"
+    ]
+  },
   "main": "index.js",
   "scripts": {
+    "build": "webpack",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,7 +41,7 @@
     "bar",
     "react"
   ],
-  "author": "mat",
+  "author": "mat <mat@alabaster.de>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/gitmathub/react-star-rating-chart/issues"
