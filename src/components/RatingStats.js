@@ -56,37 +56,35 @@ const styles = {
   },
   greyStars: {
     width: '16px',
-    color: grey[400]
+    color: grey[400],
   },
   yellowStars: {
     width: '16px',
-    color: amber[400]
+    color: amber[400],
   },
   greyPerson: {
     width: '18px',
     color: grey[400],
   },
-  raterCount: {
-  }
+  raterCount: {},
 }
 
 export class RatingStat extends React.Component {
-
   constructor(props) {
     super(props)
     this.state = {
       ratings: [0, 0, 0, 0, 0],
       colors: [lightGreen[300], lime[400], amber[300], orange[300], red[200]],
       ratingAverage: 0.0,
-      raterCount: 0
+      raterCount: 0,
     }
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.setState({
       ratings: this.props.ratings,
       ratingAverage: this.props.ratingAverage,
-      raterCount: this.props.raterCount
+      raterCount: this.props.raterCount,
     })
   }
 
@@ -102,18 +100,16 @@ export class RatingStat extends React.Component {
         <div className={classes.card}>
           <div className={classes.bigBox}>
             <div className={classes.outerAverageBox}>
-            <div className={classes.averageBox}>
-              <Typography className={classes.average}>{ratingAverage}</Typography>
-              {getStars(classes, Math.round(ratingAverage))}
-              <Typography className={classes.raterCount}>{raterCount} total</Typography>
-              {/* <PersonIcon className={classes.greyPerson}/> */}
-            </div>
-            </div>
-              <div className={classes.chart}>
-                <RatingChart
-        					ratings={ ratings }
-        					colors={ colors } />
+              <div className={classes.averageBox}>
+                <Typography className={classes.average}>{ratingAverage}</Typography>
+                {getStars(classes, Math.round(ratingAverage))}
+                <Typography className={classes.raterCount}>{raterCount} total</Typography>
+                {/* <PersonIcon className={classes.greyPerson}/> */}
               </div>
+            </div>
+            <div className={classes.chart}>
+              <RatingChart ratings={ratings} colors={colors} />
+            </div>
           </div>
         </div>
       </div>
@@ -123,11 +119,11 @@ export class RatingStat extends React.Component {
 
 function getStars(classes, stars) {
   let i = 0
-  let yellowStars = [...Array(stars)].map(()=>{
+  let yellowStars = [...Array(stars)].map(() => {
     return <StarIcon key={i++} className={classes.yellowStars} />
   })
   let ii = 5 - i
-  let greyStars = [...Array(ii)].map(()=>{
+  let greyStars = [...Array(ii)].map(() => {
     return <StarIcon key={i++} className={classes.greyStars} />
   })
   return _.concat(yellowStars, greyStars)

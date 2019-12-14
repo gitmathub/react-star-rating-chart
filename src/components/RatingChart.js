@@ -2,12 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { withStyles } from 'material-ui/styles'
 import StarIcon from 'material-ui-icons/Star'
-import amber from 'material-ui/colors/amber'
 import grey from 'material-ui/colors/grey'
 
 import _ from 'lodash'
 
-const styles = (theme) => ({
+const styles = theme => ({
   root: {
     width: '100%',
   },
@@ -32,35 +31,36 @@ const styles = (theme) => ({
 })
 
 export class RatingChart extends React.Component {
-
-	render() {
+  render() {
     const classes = this.props.classes
-		const	ratings = this.props.ratings || []
+    const ratings = this.props.ratings || []
     const colors = this.props.colors || []
-		const max = _.max(ratings)
+    const max = _.max(ratings)
 
-		return (
-			<table className={classes.table}>
-      <tbody>
-				{ ratings.map((item, itemIndex) => {
+    return (
+      <table className={classes.table}>
+        <tbody>
+          {ratings.map((item, itemIndex) => {
+            let style = {
+              backgroundColor: colors[itemIndex] || '#f00',
+              width: (item / max) * 100 + '%',
+              height: 'auto',
+            }
 
-  				let style = {
-  					backgroundColor: colors[itemIndex] || '#f00',
-            width: item / max * 100 + '%',
-            height: 'auto',
-  				}
-
-          return (
-            <tr key={itemIndex} ><td className={classes.td}>
-              {5 - itemIndex} <StarIcon className={classes.starIcon} />
-            </td><td>
-            <div style={style}>
-              <span className={classes.count}>{ item }</span>
-            </div>
-            </td></tr>
-          )
-				}) }
-      </tbody>
+            return (
+              <tr key={itemIndex}>
+                <td className={classes.td}>
+                  {5 - itemIndex} <StarIcon className={classes.starIcon} />
+                </td>
+                <td>
+                  <div style={style}>
+                    <span className={classes.count}>{item}</span>
+                  </div>
+                </td>
+              </tr>
+            )
+          })}
+        </tbody>
       </table>
     )
   }
@@ -69,7 +69,7 @@ export class RatingChart extends React.Component {
 RatingChart.propTypes = {
   classes: PropTypes.object.isRequired,
   ratings: PropTypes.array.isRequired,
-  colors: PropTypes.array.isRequired
+  colors: PropTypes.array.isRequired,
 }
 
 export default withStyles(styles)(RatingChart)
