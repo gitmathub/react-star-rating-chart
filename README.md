@@ -1,11 +1,15 @@
 # react-star-rating-chart
+
 A React component that is inspired by the Google Play Store start rating chart.
 
 ![example pic of the star rating chart](https://github.com/gitmathub/react-star-rating-chart/blob/master/star-rating-screenshot.png)
 
 ## under construction
 
+This component is not maintained.
+
 ### TODOS
+
 - make npm
 - document installation
 - document usage
@@ -13,6 +17,7 @@ A React component that is inspired by the Google Play Store start rating chart.
 - thanks to inspiration...
 
 ## Dependencies
+
 - react
 - material-ui
 - lodash
